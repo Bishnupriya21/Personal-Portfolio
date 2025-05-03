@@ -1,0 +1,444 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    line-height: 1.6;
+    font-family: Arial, sans-serif;
+  }
+  
+  nav {
+    background-color: transparent;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center items vertically */
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.8s ease; /* Smooth transition */
+  }
+  
+  .logo {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 28px;
+    color: rgb(114, 194, 240);
+  }
+  
+  .nav-link {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-link li {
+    margin: 0 1rem;
+  }
+  
+  .nav-link a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .nav-link a:hover {
+    color: rgb(114, 194, 240);
+  }
+  
+  /* Mobile Menu Styles */
+  .menu-toggle {
+    display: none; /* Hide menu toggle by default */
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: white; /* Color of the bars */
+    margin: 4px 0;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: flex; /* Show menu toggle button */
+    }
+  
+    .nav-link {
+      display: none; /* Hide nav links by default */
+      flex-direction: column; /* Stack links vertically */
+      width: 100%; /* Full width */
+      position: absolute; /* Position absolute to overlap */
+      top: 60px; /* Position below navbar */
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.8); /* Background for dropdown */
+    }
+  
+    .nav-link li {
+      margin: 1rem 0; /* Space between stacked links */
+      text-align: center; /* Center text */
+    }
+  
+    .nav-link.active {
+      display: flex; /* Show links when active */
+    }
+  }
+  
+  
+  #profile{
+    margin-bottom: 8rem;
+  }
+  #profile canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    display: block;
+    background: radial-gradient(circle at center, #0a0a23 30%, #151535);
+  }
+  
+  #networkCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  } 
+  
+  .profile-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding-top: 100px;
+  } 
+  
+  .profile-content h2 {
+    font-size: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  .profile-content h4{
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  .profile-content p {
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(114, 194, 240);
+  }
+  
+  .profile-content img {
+    width: 250px;
+    border-radius: 50%;
+  }
+  
+  button {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.7rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background-color: #04082e;
+    color: rgb(255, 255, 255);
+  }
+  
+  #education {
+    background-color: #f9f9f9;
+    padding: 3rem 1rem;
+  }
+  
+  #education h2{
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .education-card {
+    background: #fff;
+    border: 2px solid#ddd;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.304);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  .education-card h3 {
+    font-size: 1.8rem;
+    color: #007bff;
+  }
+  
+  .education-card p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 5px;
+  }
+  
+  .education-card strong {
+    color: #000;
+  }
+  
+  #contact {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  #contact h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  #contact p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333
+  }
+  
+  .contact-card {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .group-form {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .group-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333
+  }
+  
+  .group-form input,
+  .group-form text area {
+    width: 96%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    font-size: 16px;
+  }
+  
+  .group-form textarea {
+    height: 150px;
+    resize: none;
+  
+  }
+  
+  
+  
+  .group-card {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  
+  }
+  
+  
+  
+  
+  .view-botton {
+    text-decoration: none;
+    color: #fff;
+    background-color: #ff704d;
+    padding: 7px 9px;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+  }
+  
+  .view-botton:hover{
+    background-color: #4a4a4a;
+    color: #ddd;
+  }
+  
+  
+  
+  .scroll-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #ff5733 transparent;
+  }
+  
+  .scroll-container::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .scroll-container::-webkit-scrollbar-thumb {
+    background-color: #ff5733;
+    border-radius: 10px;
+  }
+  
+  .scroll-container::-webkit-scrollbar-track {
+    background-color: #f9f9f9;
+  }
+  
+  
+  
+  .read-more {
+    text-decoration: none;
+    color: #fff;
+    background-color: #ff5733;
+    padding: 10px 20px;
+    margin: 20px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  
+  .read-more:hover {
+    background-color: #707070;
+  }
+  
+  footer {
+    background-color: #151515;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .footer-content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family:cursive;
+  }
+  
+  .footer-content p {
+    font-size: 16px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  .footer-content .socials {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .footer-content .socials li {
+    margin: 0 10px;
+  }
+  
+  .footer-content .socials a {
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-content .socials a:hover {
+    color: #ff6347;
+  }
+  
+  .footer-bottom {
+    background-color: #9e9e9e;
+    padding: 10px 0;
+    margin-top: 20px;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+    color: #000 ;
+  }
+  
+  .socials img {
+    width: 45px;
+    transition: transform 0.3s ease
+  }
+  
+  .socials img:hover {
+    transform: scale(1.08);
+  }
+  
+  .skills-section {
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+  }
+  
+  .skills-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #333;
+  }
+  
+  .skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .skill-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .skill-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .skill-icon img {
+    width: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .skill-bar {
+    background-color: #f1f1f1;
+    border-radius: 25px;
+    height: 10px;
+    width: 100%;
+    position: relative;
+  }
+  
+  .skill-level {
+    background-color: #4caf50;
+    height: 100%;
+    border-radius: 25px;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .html-level {
+    width: 90%; 
+  }
+  
+  .css-level {
+    width: 80%;
+  }
+  
+  
+  
+  
+  .contact-card {
+    width: 500px;
+    height: 360px;
+  }
+  
+  
