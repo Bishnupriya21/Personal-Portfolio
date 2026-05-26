@@ -1,214 +1,476 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bishnupriya Prusty</title>
+  <title>Bishnupriya Prusty | Software Engineer Trainee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <nav>
-    <div class="logo">Bishnupriya Prusty</div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="logo">
+      <span class="logo-letters">
+        <span class="logo-b">B</span><span class="logo-p">P</span>
+      </span>
+      <span class="logo-dot">.</span>
+    </div>
     <div class="menu-toggle" id="mobile-menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
     </div>
     <ul class="nav-link" id="nav-links">
-      <li><a href="#profile">Profile</a></li>
+      <li><a href="#profile">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#education">Education</a></li>
-      
-      <li><a href="#skill">Skill</a></li>
-      
-      
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-
+  <!-- HERO -->
   <section id="profile">
     <canvas id="networkCanvas"></canvas>
     <div class="profile-content">
-      <img src="priya.jpg" alt="profile image" />
-      <h2>Bishnupriya Prusty</h2>
-      <h4>Software Engineer</h4>
-      <p>Aiming to leverage my software development passion and technical expertise to contribute to innovative
-        projects,<br> driving
-        organizational success in a software engineering role.</p>
-      <a href="hire.html"><button id="hireMeBtn">Hire Me</button></a>
-      <a href="CV.pdf"><button>My CV</button></a>
+      <div class="hero-badge">&#x2022; Available for opportunities</div>
+      <img src="priya.jpg" alt="Bishnupriya Prusty" class="profile-img"/>
+      <h1>Bishnupriya<br><span class="accent">Prusty</span></h1>
+      <h2 class="role-title">Software Engineer Trainee <span class="role-divider">|</span> Frontend Developer</h2>
+      <p class="hero-bio">Building responsive web applications with React.js &amp; JavaScript.<br>Passionate about clean UI and seamless user experiences.</p>
+      <div class="hero-btns">
+        <a href="#contact"><button class="btn-primary">Hire Me</button></a>
+        <a href="CV.pdf" download><button class="btn-outline">Download CV</button></a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/bishnupriya-prusty-101588343" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://github.com/Bishnupriya21" target="_blank" title="GitHub" aria-label="GitHub">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
     </div>
   </section>
 
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="section-tag">01 &mdash; About</div>
+      <h2 class="section-title">Who I Am</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I'm a Computer Science Engineering graduate with hands-on experience as a Software Engineer Trainee at Practomind Solutions LLP. I specialize in building responsive, mobile-first web applications using React.js and JavaScript.</p>
+          <p>I enjoy translating design ideas into pixel-perfect interfaces and bridging the gap between frontend and backend through RESTful API integrations. I thrive in collaborative environments and love solving real UI/UX problems.</p>
+        </div>
+        <div class="about-details">
+          <div class="detail-row"><span class="detail-label">Name</span><span class="detail-val">Bishnupriya Prusty</span></div>
+          <div class="detail-row"><span class="detail-label">Role</span><span class="detail-val">Software Engineer Trainee</span></div>
+          <div class="detail-row"><span class="detail-label">Location</span><span class="detail-val">Bhubaneswar, India</span></div>
+          <div class="detail-row"><span class="detail-label">Email</span><span class="detail-val">bishnupriya0018@gmail.com</span></div>
+          <div class="detail-row"><span class="detail-label">Phone</span><span class="detail-val">+91 9938494569</span></div>
+          <div class="detail-row"><span class="detail-label">Status</span><span class="detail-val available">Open to Work &#10003;</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-inner">
+      <div class="section-tag">02 &mdash; Experience</div>
+      <h2 class="section-title">Work Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Software Engineer Trainee</h3>
+                <p class="timeline-company">Practomind Solutions LLP</p>
+              </div>
+              <span class="timeline-date">2026</span>
+            </div>
+            <p class="timeline-location">&#128205; Bhubaneswar, India</p>
+            <ul class="timeline-points">
+              <li>Developed and optimized responsive web interfaces using React.js and JavaScript, ensuring a consistent, mobile-first user experience across all devices and screen sizes.</li>
+              <li>Integrated frontend components with RESTful backend APIs, implementing efficient state management and resolving cross-stack bugs to maintain smooth end-to-end functionality.</li>
+              <li>Contributed to multi-role web applications (admin and user dashboards), handling UI development, feature additions, and targeted performance improvements.</li>
+              <li>Collaborated with team members on bug fixing, code reviews, and iterative feature delivery, improving overall application reliability and user experience.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>React.js</span><span>JavaScript</span><span>REST APIs</span><span>Responsive Design</span><span>Node.js</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-inner">
+      <div class="section-tag">03 &mdash; Projects</div>
+      <h2 class="section-title">My Work</h2>
+
+      <div class="projects-category-label">Professional Work</div>
+      <div class="projects-grid">
+
+        <div class="project-card project-professional">
+          <div class="project-number">01</div>
+          <h3>Ed-Tech Platform</h3>
+          <p>School and student-facing web platform. Built responsive UI components from scratch, implemented frontend features end-to-end, and resolved critical UI bugs across multiple flows to improve overall stability and user experience.</p>
+          <div class="project-tech">
+            <span>React.js</span><span>JavaScript</span><span>CSS3</span><span>REST APIs</span>
+          </div>
+          <span class="proj-confidential">&#128274; NDA &mdash; Confidential</span>
+        </div>
+
+        <div class="project-card project-professional">
+          <div class="project-number">02</div>
+          <h3>Real Estate CRM &amp; Listings Platform</h3>
+          <p>Dual-product real estate suite — a CRM for agents and a property listings platform for users. Developed UI modules for both admin and user-facing views, integrated backend APIs for dynamic data rendering, and ensured smooth cross-component data flow.</p>
+          <div class="project-tech">
+            <span>React.js</span><span>JavaScript</span><span>REST APIs</span><span>Node.js</span>
+          </div>
+          <span class="proj-confidential">&#128274; NDA &mdash; Confidential</span>
+        </div>
+
+        <div class="project-card project-professional">
+          <div class="project-number">03</div>
+          <h3>Client UI Customisation &mdash; White-Label Product</h3>
+          <p>A client acquired a white-labelled version of an existing ed-tech product and required custom UI modifications for their own branding and workflows. Handled all client-specific frontend changes — layout adjustments, theme overrides, and feature-level customisations per their requirements.</p>
+          <div class="project-tech">
+            <span>React.js</span><span>JavaScript</span><span>CSS3</span><span>UI Customisation</span>
+          </div>
+          <span class="proj-confidential">&#128274; NDA &mdash; Confidential</span>
+        </div>
+
+        <div class="project-card project-professional">
+          <div class="project-number">04</div>
+          <h3>B2B Fintech Platform</h3>
+          <p>Enterprise-level B2B fintech product currently in active development. Handling UI development for financial dashboards and data-heavy interfaces — building frontend components, managing data fetching from APIs, and ensuring clean, reliable workflows for business users.</p>
+          <div class="project-tech">
+            <span>React.js</span><span>JavaScript</span><span>REST APIs</span><span>Fintech</span>
+          </div>
+          <span class="proj-confidential">&#128274; NDA &mdash; Confidential</span>
+        </div>
+
+      </div>
+
+      <div class="projects-category-label projects-category-label--personal">Personal Projects</div>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-number">05</div>
+          <h3>Password Generator</h3>
+          <p>A utility tool to generate secure, customisable passwords. Users can set password length and toggle inclusion of uppercase, lowercase, numbers, and symbols. Features a one-click copy to clipboard.</p>
+          <div class="project-tech">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href="https://bishnupriya21.github.io/password-generator/" target="_blank" class="proj-link-live">Live Demo</a>
+            <a href="https://github.com/Bishnupriya21/password-generator" target="_blank" class="proj-link-gh">GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-number">06</div>
+          <h3>Quiz App</h3>
+          <p>An interactive multiple-choice quiz application with real-time answer validation and score tracking. Clean card-based UI with smooth navigation between questions and a results summary at the end.</p>
+          <div class="project-tech">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href="https://bishnupriya21.github.io/quiz-app/" target="_blank" class="proj-link-live">Live Demo</a>
+            <a href="https://github.com/Bishnupriya21/quiz-app" target="_blank" class="proj-link-gh">GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-number">07</div>
+          <h3>Random Choice Picker</h3>
+          <p>A decision-making tool where users enter comma-separated options and the app randomly highlights a winner. Built with clean DOM manipulation and dynamic tag rendering.</p>
+          <div class="project-tech">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href="https://bishnupriya21.github.io/random-choice-picker/" target="_blank" class="proj-link-live">Live Demo</a>
+            <a href="https://github.com/Bishnupriya21/random-choice-picker" target="_blank" class="proj-link-gh">GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-number">08</div>
+          <h3>Personal Portfolio Website</h3>
+          <p>This portfolio — a responsive personal site built with HTML, CSS, and JavaScript. Features an animated network canvas background, smooth scroll navigation, EmailJS contact form integration, and mobile-first responsive design.</p>
+          <div class="project-tech">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>EmailJS</span>
+          </div>
+          <div class="project-links">
+            <a href="https://bishnupriya21.github.io/Personal-Portfolio/" target="_blank" class="proj-link-live">Live Demo</a>
+            <a href="https://github.com/Bishnupriya21/Personal-Portfolio" target="_blank" class="proj-link-gh">GitHub</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-inner">
+      <div class="section-tag">04 &mdash; Skills</div>
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+
+        <div class="skill-group">
+          <h4 class="skill-group-title">Frontend</h4>
+          <div class="skill-pills">
+            <div class="skill-pill">
+              <!-- HTML5 icon -->
+              <svg width="18" height="18" viewBox="0 0 32 32"><path fill="#e44d26" d="M5.902 27.201L3.655 2h24.69l-2.25 25.197L15.985 30z"/><path fill="#f16529" d="M16 27.858l8.17-2.265 1.922-21.532H16z"/><path fill="#ebebeb" d="M16 13.407h-4.09l-.282-3.165H16V7.151H8.25l.074.83.759 8.517H16zm0 8.027l-.014.004-3.442-.929-.22-2.465H9.221l.433 4.852 6.332 1.758.014-.004z"/><path fill="#fff" d="M15.989 13.407v3.091h3.809l-.358 4.009-3.451.93v3.216l6.337-1.757.046-.522.726-8.137.076-.83zm0-6.256v3.091h7.466l.062-.694.141-1.567.074-.83z"/></svg>
+              HTML5
+            </div>
+            <div class="skill-pill">
+              <!-- CSS3 icon -->
+              <svg width="18" height="18" viewBox="0 0 32 32"><path fill="#1572b6" d="M5.902 27.201L3.655 2h24.69l-2.25 25.197L15.985 30z"/><path fill="#33a9dc" d="M16 27.858l8.17-2.265 1.922-21.532H16z"/><path fill="#fff" d="M16 13.177h4.09l.282-3.165H16V6.92h7.75l-.074.83-.759 8.518H16zm.014 8.033l-.014.004-3.442-.929-.22-2.465H9.221l.433 4.852 6.332 1.757.028-.008z"/><path fill="#ebebeb" d="M15.989 13.177v3.09H12.18l-.358 4.009 3.451.93v3.216l-6.337-1.757-.046-.522-.727-8.137-.076-.829zm0-6.257v3.09H8.523l-.062-.693-.141-1.567-.074-.83z"/></svg>
+              CSS3
+            </div>
+            <div class="skill-pill">
+              <!-- JS icon -->
+              <svg width="18" height="18" viewBox="0 0 32 32"><path fill="#f7df1e" d="M2 2h28v28H2z"/><path d="M20.809 23.875a2.866 2.866 0 0 0 2.6 1.6c1.09 0 1.787-.545 1.787-1.3 0-.9-.716-1.222-1.916-1.747l-.658-.282c-1.9-.809-3.16-1.822-3.16-3.964 0-1.973 1.5-3.476 3.853-3.476a3.889 3.889 0 0 1 3.742 2.107l-2.048 1.315a1.789 1.789 0 0 0-1.694-1.134 1.149 1.149 0 0 0-1.264 1.134c0 .794.49 1.115 1.622 1.606l.658.282c2.237.959 3.5 1.938 3.5 4.134 0 2.369-1.861 3.665-4.359 3.665a5.058 5.058 0 0 1-4.795-2.691zm-9.295.228c.438.757.835 1.395 1.784 1.395.911 0 1.484-.357 1.484-1.744v-9.42h2.52v9.453c0 2.872-1.683 4.179-4.139 4.179a4.3 4.3 0 0 1-4.156-2.507z"/></svg>
+              JavaScript
+            </div>
+            <div class="skill-pill">
+              <!-- React icon -->
+              <svg width="18" height="18" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.5" fill="#61dafb"/><ellipse cx="12" cy="12" fill="none" stroke="#61dafb" stroke-width="1.5" rx="10" ry="3.8"/><ellipse cx="12" cy="12" fill="none" stroke="#61dafb" stroke-width="1.5" rx="10" ry="3.8" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" fill="none" stroke="#61dafb" stroke-width="1.5" rx="10" ry="3.8" transform="rotate(120 12 12)"/></svg>
+              React.js
+            </div>
+            <div class="skill-pill">
+              <!-- Responsive / mobile icon -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              Responsive Design
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4 class="skill-group-title">Backend &amp; Languages</h4>
+          <div class="skill-pills">
+            <div class="skill-pill">
+              <!-- Node icon -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6cc24a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="15.5"/><polyline points="22 8.5 12 15.5 2 8.5"/></svg>
+              Node.js
+            </div>
+            <div class="skill-pill">
+              <!-- Express icon -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              Express.js
+            </div>
+            <div class="skill-pill">
+              <!-- SQL / database icon -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4f8ef7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              SQL
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4 class="skill-group-title">Tools &amp; Concepts</h4>
+          <div class="skill-pills">
+            <div class="skill-pill">
+              <!-- Git icon -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f05033" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg>
+              Git &amp; GitHub
+            </div>
+            <div class="skill-pill">
+              <!-- API icon -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#72c2f0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              REST APIs
+            </div>
+            <div class="skill-pill">
+              <!-- VS Code icon -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#007acc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              VS Code
+            </div>
+            <div class="skill-pill">
+              <!-- Mobile-first icon -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              Mobile-First Design
+            </div>
+            <div class="skill-pill">
+              <!-- Cross-browser icon -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Cross-Browser Testing
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
   <section id="education">
-    <h2>Education</h2>
-    <div class="education-card">
-      <h3>Matriculation</h3>
-      <p><strong>Board : </strong> DAV Public School</p>
-      
-      <p><strong>Year of Passing : </strong>2020</p>
-      <p><strong>Percentage : </strong>83.5%</p>
-      <h3>Intermediate of Science</h3>
-      <p><strong>Board :  </strong>Adyant Higher Secondary School</p>
-      <p><strong>Year of Passing : </strong>2022</p>
-      <p><strong>Percentage : </strong>73%</p>
+    <div class="section-inner">
+      <div class="section-tag">05 &mdash; Education</div>
+      <h2 class="section-title">Academic Background</h2>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <div class="edu-year">2022 &ndash; 2026</div>
+          <div class="edu-icon-svg">
+            <!-- Graduation cap SVG -->
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4f8ef7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5"/></svg>
+          </div>
+          <h3>B.Tech &mdash; Computer Science Engineering</h3>
+          <p class="edu-institution">Gandhi Engineering College</p>
+          <p class="edu-sub">Bhubaneswar, India</p>
+         
+        </div>
+        <div class="edu-card">
+          <div class="edu-year">2020 &ndash; 2022</div>
+          <div class="edu-icon-svg">
+            <!-- Book SVG -->
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4f8ef7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
+          <h3>Intermediate of Science</h3>
+          <p class="edu-institution">Adyant Higher Secondary School</p>
+          <p class="edu-sub">Bhubaneswar, India</p>
+          
+        </div>
+        <div class="edu-card">
+          <div class="edu-year">2020</div>
+          <div class="edu-icon-svg">
+            <!-- School / building SVG -->
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4f8ef7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Matriculation</h3>
+          <p class="edu-institution">DAV Public School</p>
+          <p class="edu-sub">Cuttack, India</p>
+         
+        </div>
+      </div>
 
+      <div class="cert-section">
+        <h3 class="cert-heading">Certifications</h3>
+        <div class="cert-grid">
 
-      
-      <h3>B.Tech in Computer Science Engineering</h3>
-      <p><strong>University : </strong>Biju Patnaik University of Technology,Rourkela</p>
-      <p><strong>College : </strong>Gandhi Engineering College</p>
-      <p><strong>Session : </strong>2022-2026</p>
-      <p><strong>Year of Passing : </strong>2026</p>
-      <p><strong>CGPA : </strong>7.17</p>
+          <!-- Certification 1: clickable PDF -->
+          <a href="Bishnu Priya Prusty Front End Developme....pdf" target="_blank" class="cert-card cert-card--link">
+            <div class="cert-icon-svg">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4f8ef7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <div class="cert-body">
+              <h4>Frontend Development</h4>
+              <p>AspireNEXT by SEED (Infosys)</p>
+              <span class="cert-desc">HTML, CSS, JavaScript &mdash; collaborative projects in structured program</span>
+              <span class="cert-open-hint">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Certificate
+              </span>
+            </div>
+          </a>
+
+          <!-- Certification 2: clickable PDF -->
+          <a href="Web Development Training - Certificate ....pdf" target="_blank" class="cert-card cert-card--link">
+            <div class="cert-icon-svg">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4f8ef7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <div class="cert-body">
+              <h4>Web Development</h4>
+              <p>Internshala Trainings</p>
+              <span class="cert-desc">HTML, CSS, JavaScript, React &mdash; hands-on assignments &amp; assessments</span>
+              <span class="cert-open-hint">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Certificate
+              </span>
+            </div>
+          </a>
+
+        </div>
+      </div>
     </div>
   </section>
 
-  
-
-
-  <section id="skill" class="skills-section">
-    <h2>Skills</h2>
-    <div class="skills-container">
-      <!-- Skill 1 -->
-
-      <div class="skill-card">
-        <div class="skill-icon">
-          <img src="https://img.icons8.com/plasticine/512/c-programming.png" alt="CSS Icon">
-        </div>
-        <h3>C</h3>
-        <div class="skill-bar">
-          <div class="skill-level css-level"></div>
-        </div>
-      </div>
-
-      <div class="skill-card">
-        <div class="skill-icon">
-          <img src="https://logos-world.net/wp-content/uploads/2022/07/Java-Logo.png" alt="CSS Icon">
-        </div>
-        <h3>Java</h3>
-        <div class="skill-bar">
-          <div class="skill-level css-level"></div>
-        </div>
-      </div>
-
-      
-
-      <div class="skill-card">
-        <div class="skill-icon">
-          <img src="https://t4.ftcdn.net/jpg/02/23/73/03/360_F_223730334_0l31O1JBvtyw2B8Zkeu95LEqX0Y3PxjG.jpg" alt="HTML Icon">
-        </div>
-        <h3>HTML</h3>
-        <div class="skill-bar">
-          <div class="skill-level html-level"></div>
-        </div>
-      </div>
-
-      <!-- Skill 2 -->
-      <div class="skill-card">
-        <div class="skill-icon">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyfXdKH7SrCVpLx-h0j9VSLf7LQxwWgptJNw&s" alt="CSS Icon">
-        </div>
-        <h3>CSS</h3>
-        <div class="skill-bar">
-          <div class="skill-level css-level"></div>
-        </div>
-      </div>
-
-      <div class="skill-card">
-        <div class="skill-icon">
-          <img src="https://logos-world.net/wp-content/uploads/2023/02/JavaScript-Symbol.png" alt="CSS Icon">
-        </div>
-        <h3>javascript</h3>
-        <div class="skill-bar">
-          <div class="skill-level css-level"></div>
-        </div>
-      </div>
-
-      <div class="skill-card">
-        <div class="skill-icon">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8wh_vrysQFY_0CkcD-e-lYPPHLvsTaXqIGA&s" alt="CSS Icon">
-        </div>
-        <h3>React.js</h3>
-        <div class="skill-bar">
-          <div class="skill-level css-level"></div>
-        </div>
-      </div>
-
-      
-
-      
-  </section>
-
-  
-
+  <!-- CONTACT -->
   <section id="contact">
-    <h2>Contact Me</h2>
-
-    <p>
-      If You have any querry, fell free to reach out to me by filling the from
-      below
-    </p>
-
-   
-
-      <div>
-        <div class="contact-card">
+    <div class="section-inner">
+      <div class="section-tag">06 &mdash; Contact</div>
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="contact-sub">I'm currently open to new opportunities. Whether you have a question or just want to say hi &mdash; my inbox is always open!</p>
+      <div class="contact-layout">
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <span class="ci-icon">&#128231;</span>
+            <div>
+              <span class="ci-label">Email</span>
+              <a href="mailto:bishnupriya0018@gmail.com">bishnupriya0018@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <span class="ci-icon">&#128222;</span>
+            <div>
+              <span class="ci-label">Phone</span>
+              <a href="tel:+919938494569">+91 9938494569</a>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <span class="ci-icon">&#128205;</span>
+            <div>
+              <span class="ci-label">Location</span>
+              <span>Bhubaneswar, India</span>
+            </div>
+          </div>
+          <div class="contact-socials">
+            <a href="https://www.linkedin.com/in/bishnupriya-prusty-101588343" target="_blank" class="social-btn">LinkedIn</a>
+            <a href="https://github.com/Bishnupriya21" target="_blank" class="social-btn">GitHub</a>
+          </div>
+        </div>
+        <div class="contact-form-wrap">
           <form id="form">
-            <div class="group-form">
+            <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="🕺Drop your Name" required />
+              <input type="text" id="name" name="name" placeholder="Your full name" required />
             </div>
-            <div class="group-form">
+            <div class="form-group">
               <label for="email">Email</label>
-              <input type="text" id="email" name="email" placeholder="📧abc@gmail.com" required />
+              <input type="email" id="email" name="email" placeholder="your@email.com" required />
             </div>
-
-            <div class="group-form">
+            <div class="form-group">
               <label for="message">Message</label>
-              <input type="text" id="message" name="message" placeholder="Drop Your Messasge💌" required />
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about the opportunity..." required></textarea>
             </div>
-
-            <button class="btn-message" type="submit" id="button">
-              Send Message🤺
-            </button>
+            <button type="submit" class="btn-primary full-width" id="button">Send Message &#8594;</button>
           </form>
-        </div> 
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    <div class="footer-content">
-      <h3>Bishnupriya Prusty</h3>
-      <p>Follow me on social media or contact me for collaborations!</p>
-      <ul class="socials">
-        
-        <li>
-          <a href="https://www.linkedin.com/in/bishnupriya-prusty-101588343?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BNIoBi7zaRW%2BvDbXw0XDMxg%3D%3D"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNpCKq8tZcAAJM-UMa5Q6_PwvE4U_jFQV3Zg&s" alt="" /></a>
-        </li>
-        <li>
-          <a href="https://github.com/Bishnupriya21"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFKUd8TKlGho5jUUcPimr0MKnVEyIP3uI-TQ&s" alt="" /></a>
-        </li>
-        
-      </ul>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; Bishnupriya Prusty. All Rights Reserved.</p>
+    <div class="footer-inner">
+      <div class="footer-logo">BP<span>.</span></div>
+      <p>Designed &amp; built by Bishnupriya Prusty</p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/bishnupriya-prusty-101588343" target="_blank">LinkedIn</a>
+        <a href="https://github.com/Bishnupriya21" target="_blank">GitHub</a>
+      </div>
+      <p class="footer-copy">&#169; 2026 Bishnupriya Prusty. All Rights Reserved.</p>
     </div>
   </footer>
 
-  <script src="contact.js"></script><script type="text/javascript"
-  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-<script type="text/javascript">
-  emailjs.init('ypzDaXK43SWmY2zl1')
-</script>
-
-  
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">emailjs.init('ypzDaXK43SWmY2zl1')</script>
   <script src="script.js"></script>
 </body>
-
 </html>

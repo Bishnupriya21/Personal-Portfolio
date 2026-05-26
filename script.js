@@ -1,69 +1,61 @@
+/* =============================================
+   NETWORK CANVAS ANIMATION
+   ============================================= */
 const canvas = document.getElementById('networkCanvas');
 const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
 
-const nodeCount = 150; // Increase the number of nodes
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+
+const nodeCount = 120;
+const maxDistance = 140;
 const nodes = [];
-const maxDistance = 150; // Max connection distance
 
-// Node constructor
 class Node {
-  constructor(x, y, speedX, speedY, radius) {
-    this.x = x;
-    this.y = y;
-    this.speedX = speedX;
-    this.speedY = speedY;
-    this.radius = radius;
+  constructor() {
+    this.reset();
   }
-
-  // Update position
+  reset() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.speedX = (Math.random() - 0.5) * 1.4;
+    this.speedY = (Math.random() - 0.5) * 1.4;
+    this.radius = Math.random() * 2 + 1.5;
+    this.alpha = Math.random() * 0.5 + 0.3;
+  }
   update() {
-    if (this.x + this.radius > canvas.width || this.x - this.radius < 0) {
-      this.speedX = -this.speedX;
-    }
-    if (this.y + this.radius > canvas.height || this.y - this.radius < 0) {
-      this.speedY = -this.speedY;
-    }
+    if (this.x + this.radius > canvas.width || this.x - this.radius < 0) this.speedX *= -1;
+    if (this.y + this.radius > canvas.height || this.y - this.radius < 0) this.speedY *= -1;
     this.x += this.speedX;
     this.y += this.speedY;
   }
-
-  // Draw the node
   draw() {
     ctx.beginPath();
-    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-    ctx.fillStyle = '#00bfff';
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(79, 142, 247, ${this.alpha})`;
     ctx.fill();
     ctx.closePath();
   }
 }
 
-// Create more random nodes
-function createNodes() {
-  for (let i = 0; i < nodeCount; i++) {
-    const radius = 3;
-    const x = Math.random() * (canvas.width - radius * 2) + radius;
-    const y = Math.random() * (canvas.height - radius * 2) + radius;
-    const speedX = (Math.random() - 0.5) * 2; // Random speed
-    const speedY = (Math.random() - 0.5) * 2; // Random speed
-    nodes.push(new Node(x, y, speedX, speedY, radius));
-  } 
-}
+for (let i = 0; i < nodeCount; i++) nodes.push(new Node());
 
-// Connect nodes with lines if within distance
 function connectNodes() {
   for (let i = 0; i < nodes.length; i++) {
     for (let j = i + 1; j < nodes.length; j++) {
       const dx = nodes[i].x - nodes[j].x;
       const dy = nodes[i].y - nodes[j].y;
-      const distance = Math.sqrt(dx * dx + dy * dy);
-      if (distance < maxDistance) {
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < maxDistance) {
+        const opacity = (1 - dist / maxDistance) * 0.45;
         ctx.beginPath();
         ctx.moveTo(nodes[i].x, nodes[i].y);
         ctx.lineTo(nodes[j].x, nodes[j].y);
-        ctx.strokeStyle = `rgba(0, 191, 255, ${1 - distance / maxDistance})`;
-        ctx.lineWidth = 1;
+        ctx.strokeStyle = `rgba(79, 142, 247, ${opacity})`;
+        ctx.lineWidth = 0.8;
         ctx.stroke();
         ctx.closePath();
       }
@@ -74,39 +66,108 @@ function connectNodes() {
 function animate() {
   requestAnimationFrame(animate);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  nodes.forEach((node) => {
-    node.update();
-    node.draw();
-  });
-
+  nodes.forEach(n => { n.update(); n.draw(); });
   connectNodes();
 }
-
-
-window.addEventListener('resize', () => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  nodes.length = 0; // clear existing nodes
-  createNodes();
-});
-
-createNodes();
 animate();
 
+window.addEventListener('resize', () => {
+  resizeCanvas();
+  nodes.forEach(n => n.reset());
+});
 
-window.addEventListener('scroll', function () {
-  const navbar = document.querySelector('nav');
-  if (window.scrollY > 500) {  // Change 50 to the desired scroll distance
-    navbar.style.backgroundColor = '#151515'; // Dark background after scroll
+/* =============================================
+   NAVBAR SCROLL BEHAVIOUR
+   ============================================= */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    navbar.classList.add('scrolled');
   } else {
-    navbar.style.backgroundColor = 'transparent'; // Transparent when at top
+    navbar.classList.remove('scrolled');
   }
 });
 
+/* =============================================
+   MOBILE MENU
+   ============================================= */
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.getElementById('nav-links');
 
 mobileMenu.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+  navLinks.classList.toggle('active');
 });
+
+// Close menu on link click
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+  });
+});
+
+/* =============================================
+   SCROLL REVEAL ANIMATION
+   ============================================= */
+const observerOptions = {
+  threshold: 0.12,
+  rootMargin: '0px 0px -40px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+// Add reveal class to elements
+const revealEls = document.querySelectorAll(
+  '.about-text, .about-details, .timeline-card, .project-card, .skill-group, .edu-card, .cert-card, .contact-info, .contact-form-wrap'
+);
+
+revealEls.forEach((el, i) => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(24px)';
+  el.style.transition = `opacity 0.6s ease ${i * 0.05}s, transform 0.6s ease ${i * 0.05}s`;
+  observer.observe(el);
+});
+
+// Inject visible class style
+const style = document.createElement('style');
+style.textContent = '.visible { opacity: 1 !important; transform: translateY(0) !important; }';
+document.head.appendChild(style);
+
+/* =============================================
+   CONTACT FORM — EMAILJS
+   ============================================= */
+const form = document.getElementById('form');
+const btn = document.getElementById('button');
+
+if (form) {
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    emailjs.send('service_esqo4ls', 'template_i9049eh', {
+      from_name: document.getElementById('name').value,
+      from_email: document.getElementById('email').value,
+      message: document.getElementById('message').value,
+    }).then(() => {
+      btn.textContent = 'Message Sent ✓';
+      btn.style.background = '#16a34a';
+      form.reset();
+      setTimeout(() => {
+        btn.textContent = 'Send Message →';
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 3500);
+    }).catch(() => {
+      btn.textContent = 'Failed — Try Again';
+      btn.style.background = '#dc2626';
+      btn.disabled = false;
+    });
+  });
+}
